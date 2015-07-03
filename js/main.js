@@ -24,8 +24,8 @@ if (window.innerWidth > 0) // replace 0 with 825 to prevent intro on mobile devi
     var displace = getScrollTop();
     displace = (displace >= 200) ? 200 : displace; // comment these out for unrestricted fun
 
-    cloudFront.style.backgroundPositionX = (displace - 100) + "px";
-    cloudBack.style.backgroundPositionX = (displace - 35) + "px";
+    cloudFront.style.backgroundPosition = (displace - 100) + "px 0";
+    cloudBack.style.backgroundPosition = (displace - 35) + "px 0";
 }
 
 window.onscroll = function(event) {
@@ -34,7 +34,7 @@ window.onscroll = function(event) {
         var displace = getScrollTop();
         displace = (displace >= 200) ? 200 : displace;
 
-        cloudFront.style.backgroundPositionX = (displace - 100) + "px";
-        cloudBack.style.backgroundPositionX = ((displace - 100) / 2.8) + "px";
+        cloudFront.style.backgroundPosition = (displace - 100) + "px 0";
+        cloudBack.style.backgroundPosition = ((displace - 100) / 2.8) + "px 0";
     }
 }
