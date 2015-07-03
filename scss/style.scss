@@ -1,0 +1,79 @@
+/*--------------------------------------------------------------
+1.0 - Imports and Reference
+--------------------------------------------------------------*/
+
+@import 'normalize';
+@import 'functionals';
+
+// @include breakpoint(large || medium || small) { property: value; }
+
+/*--------------------------------------------------------------
+2.0 - Main
+--------------------------------------------------------------*/
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: inherit;
+    height: inherit;
+    background-color: #f1f6f8;
+
+    padding-top: 200px;
+    margin-bottom: 750px; /* to vertically extend the page for scrolling */
+}
+
+main {
+    width: 50%;
+    min-width: 250px;
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    color: #35393b;
+    line-height: 25px;
+    text-shadow: 0px 1px white;
+}
+
+header {
+    position: fixed;
+    width: inherit;
+    top: 0;
+}
+
+.clouds {
+    height: 155px;
+    background-color: #d7e4e9;
+    transform: translate3d(0,0,0);
+
+    #cloud-front, #cloud-back {
+        position: absolute;
+        width: 100%;
+        height: 126px;
+        background-repeat: repeat-x;
+        transition: background-position 1s;
+    }
+    #cloud-front {
+        bottom: 0;
+        z-index: 20;
+        background-image: url(../img/cloudlayer-front.png);
+        background-position-x: -200px;
+    }
+    #cloud-back {
+        top: 0;
+        z-index: 10;
+        background-image: url(../img/cloudlayer-back.png);
+        background-position-x: -70px;
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        top: 155px;
+        height: 25px;
+        width: 100%;
+        background: linear-gradient(rgba(241,246,248,1) 0%,rgba(241,246,248,0) 100%);
+    }
+}
